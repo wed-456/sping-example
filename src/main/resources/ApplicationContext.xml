@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- lazy-init 什么时候使用 spring容器去实例化 -->
+        <bean id="user" class="com.vip.shop.User" lazy-init="false">
+            <property name="name" value="奇客谷"></property>
+        </bean>
+    <!-- scope
+        可选值:property    每次都时重新创建对象
+                singleton 单列模式
+     -->
+        <bean id="user1" class="com.vip.shop.User" scope="singleton"></bean>
+        <!-- 初始化 -->
+        <bean id="user2" class="com.vip.shop.User" init-method="init" destroy-method="destory1"></bean>
+
+</beans>
